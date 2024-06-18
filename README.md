@@ -9,3 +9,6 @@ Proyecto sobre la gestión de un gimnasio que ha sido desarrollado con el objeti
 
 # Stack Utilizado
 HTML5 | CSS3 | BootStrap 5 | TypeScript | Angular 17 | Java 17 | Spring Boot | PostgreSQL
+
+# LinkedIn
+https://www.linkedin.com/in/alejandrojuradomagdaleno/
