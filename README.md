@@ -3,7 +3,7 @@ Proyecto sobre la gestión de un gimnasio que ha sido desarrollado con el objeti
 
 # Características
 - Gestión de usuarios con roles definidos (usuario, admin, empleado).
-- Información detallada sobre máquinas, ofertas y instalaciones del gimnasio.
+- Información detallada sobre máquinas, ofertas e instalaciones del gimnasio.
 - Sistema de gestión de clases con inscripciones en línea.
 - Área para preguntas de usuarios y formulario de contacto.
 
