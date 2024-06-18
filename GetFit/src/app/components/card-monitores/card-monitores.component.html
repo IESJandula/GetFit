@@ -1,0 +1,22 @@
+<main>
+  <div class="container-fluid bg-transparent my-4 p-3" style="position: relative">
+    <div *ngIf="currentUser?.rol === 'admin' || currentUser?.rol === 'empleado'">
+      <a [routerLink]="['/gestorMonitores']" type="button" class="btn btn-primary btn-sm float-end">Administrar monitores</a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div *ngFor="let monitor of monitores" class="col">
+        <div class="card h-100 shadow-sm">
+          <img [src]="monitor.imagen" class="card-img-top" alt="{{ monitor.nombre }}" />
+          <div class="label-top shadow-sm">{{ monitor.nombre }}</div>
+          <div class="card-body">
+            <div class="clearfix mb-3">
+              <span class="float-end"><a href="#" class="small text-muted">Descripción</a></span>
+            </div>
+            <h5 class="card-title">{{ monitor.descripcion }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,22 @@
+<main>
+  <div class="container-fluid bg-transparent my-4 p-3" style="position: relative">
+    <div *ngIf="currentUser?.rol === 'admin' || currentUser?.rol === 'empleado'">
+      <a [routerLink]="['/gestorMaquinas']" type="button" class="btn btn-primary btn-sm float-end">Administrar máquinas</a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div *ngFor="let maquina of maquinas" class="col">
+        <div class="card h-100 shadow-sm">
+          <img [src]="maquina.imagenURL" class="card-img-top" alt="{{ maquina.nombre }}" />
+          <div class="label-top shadow-sm">{{ maquina.nombre }}</div>
+          <div class="card-body">
+            <div class="clearfix mb-3">
+              <span class="float-end"><a href="#" class="small text-muted">Descripción</a></span>
+            </div>
+            <h5 class="card-title">{{ maquina.descripcion }}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

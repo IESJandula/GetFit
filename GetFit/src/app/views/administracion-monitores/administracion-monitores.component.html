@@ -1,0 +1,66 @@
+<h1 class="text-center mt-5">Gestor de monitores</h1>
+
+<div class="container mt-5 px-2">
+
+    <div class="mb-2 d-flex justify-content-between align-items-center">
+
+        <div class="position-relative">
+            <span class="position-absolute search"><i class="fa fa-search"></i></span>
+            <input class="form-control w-100" placeholder="Search by order#, name...">
+        </div>
+
+        <div class="px-2">
+
+            <span>Filters <i class="fa fa-angle-down"></i></span>
+            <i class="fa fa-ellipsis-h ms-3"></i>
+        </div>
+
+    </div>
+    <div class="table-responsive">
+    <table class="table table-responsive table-borderless">
+
+      <thead>
+        <tr class="bg-light">
+          <th scope="col" width="5%">#</th>
+          <th scope="col" width="20%">Nombre</th>
+          <th scope="col" width="20%">Descripcion</th>
+          <th scope="col" width="20%">Imagen</th>
+          <th scope="col" width="20%">Acciones</th>
+        </tr>
+      </thead>
+  <tbody *ngFor="let monitor of monitores, let i = index">
+    <tr>
+      <td>{{ monitor.id }}</td>
+      <td>{{ monitor.nombre }}</td>
+      <td>{{ monitor.descripcion }}</td>
+      <td><img width="12%" [src]="monitor.imagen" alt="imagen_monitor"></td>
+      <td><button (click)="deleteMonitor(monitor.id)" class="btn btn-danger">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+
+  <button class="btn btn-primary mt-3 mb-3" (click)="muestraFormulario()">Añadir un monitor</button>
+
+  <div *ngIf="mostrarFormulario" class="mt-5">
+    <h2>Añadir nueva monitor</h2>
+    <form (ngSubmit)="createMonitor()">
+      <div class="form-group input-group mb-3">
+        <input [(ngModel)]="nuevoMonitor.nombre" name="nombre" class="form-control" placeholder="Nombre del monitor" type="text">
+      </div>
+      <div class="form-group input-group mb-3">
+        <input [(ngModel)]="nuevoMonitor.descripcion" name="descripcion" class="form-control" placeholder="Descripcion de lo que hará" type="text">
+      </div>
+      <div class="form-group input-group mb-3">
+        <input [(ngModel)]="nuevoMonitor.imagen" name="imagen" class="form-control" placeholder="Cargar imagen de la máquina" type="text">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-block"> Añadir monitor </button>
+      </div>
+    </form>
+  </div>
+
+
+
+  </div>
+
+</div>

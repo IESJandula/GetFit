@@ -1,0 +1,51 @@
+<app-header></app-header>
+<app-carousel></app-carousel>
+
+<div class="text-center mt-5">
+  <h1>¿Por qué GetFit?</h1>
+</div>
+
+<card-presentacion></card-presentacion>
+
+<div class="text-center mt-5">
+  <h1>Nuestras ofertas</h1>
+</div>
+
+<app-card-ofertas></app-card-ofertas>
+
+<div class="text-center mt-5 mb-2">
+  <h1 class="mb-5">Nuestro equipo</h1>
+</div>
+
+<app-card-maquina></app-card-maquina>
+
+<div class="text-center mt-5 mb-5 py-4 py-md-5 py-xxl-8">
+  <h1 class="mb-3">Contacta con nosotros</h1>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form (ngSubmit)="createContacto()">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input [(ngModel)]="nuevoContacto.nombre" type="text" name="nombre" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo electrónico:</label>
+            <input [(ngModel)]="nuevoContacto.correo" type="email" name="correo" class="form-control" id="correo" placeholder="Ingrese su correo electrónico">
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea [(ngModel)]="nuevoContacto.mensaje" class="form-control" name="mensaje" id="mensaje" rows="5" placeholder="Escriba su mensaje aquí"></textarea>
+          </div>
+          <button type="submit" class="btn btn-success">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
+
+
+

@@ -1,0 +1,66 @@
+<h1 class="text-center mt-5">Gestor de instalaciones</h1>
+
+<div class="container mt-5 px-2">
+
+    <div class="mb-2 d-flex justify-content-between align-items-center">
+
+        <div class="position-relative">
+            <span class="position-absolute search"><i class="fa fa-search"></i></span>
+            <input class="form-control w-100" placeholder="Search by order#, name...">
+        </div>
+
+        <div class="px-2">
+
+            <span>Filters <i class="fa fa-angle-down"></i></span>
+            <i class="fa fa-ellipsis-h ms-3"></i>
+        </div>
+
+    </div>
+    <div class="table-responsive">
+    <table class="table table-responsive table-borderless">
+
+      <thead>
+        <tr class="bg-light">
+          <th scope="col" width="5%">#</th>
+          <th scope="col" width="20%">Nombre</th>
+          <th scope="col" width="20%">Descripcion</th>
+          <th scope="col" width="20%">Imagen</th>
+          <th scope="col" width="20%">Acciones</th>
+        </tr>
+      </thead>
+  <tbody *ngFor="let instalacion of instalaciones, let i = index">
+    <tr>
+      <td>{{ instalacion.id }}</td>
+      <td>{{ instalacion.nombre }}</td>
+      <td>{{ instalacion.descripcion }}</td>
+      <td><img width="12%" [src]="instalacion.imagen" alt="imagen_maquina"></td>
+      <td><button class="btn btn-danger" (click)="deleteMaquina(instalacion.id)">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
+
+  <button class="btn btn-primary mt-3 mb-3" (click)="muestraFormulario()">Añadir una instalación</button>
+
+  <div *ngIf="mostrarFormulario" class="mt-5">
+    <h2>Añadir nueva instalación</h2>
+    <form (submit)="createInstalacion()">
+      <div class="form-group input-group mb-3">
+        <input [(ngModel)]="nuevaInstalacion.nombre" name="nombre" class="form-control" placeholder="Nombre de la instalación" type="text">
+      </div>
+      <div class="form-group input-group mb-3">
+        <input [(ngModel)]="nuevaInstalacion.descripcion" name="descripcion" class="form-control" placeholder="Descripción de la instalación" type="text">
+      </div>
+      <div class="form-group input-group mb-3">
+        <input [(ngModel)]="nuevaInstalacion.imagen" name="imagen" class="form-control" placeholder="Url de la imagen de la instalación" type="text">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-block"> Añadir instalación </button>
+      </div>
+    </form>
+  </div>
+
+
+
+  </div>
+
+</div>

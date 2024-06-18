@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'fightNight';
+  src: url(../../fonts/Fight_Night.woff);
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+}
